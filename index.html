@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCode Anleitungen - Dein Weg zum Code-Verständnis</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Sanfter Hintergrund */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Moderner Gradient */
+            color: #fff;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.15rem;
+            color: #555;
+        }
+
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive Grid */
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .tutorial-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tutorial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .card-header.html { background: linear-gradient(135deg, #e34c26, #f16529); } /* HTML Farben */
+        .card-header.css { background: linear-gradient(135deg, #264de4, #2965f1); }  /* CSS Farben */
+        .card-header.js { background: linear-gradient(135deg, #f0db4f, #f7df1e); color: #323330; } /* JS Farben */
+        .card-header.placeholder { background: linear-gradient(135deg, #777, #999); }
+
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1; /* Sorgt dafür, dass der Inhalt den verfügbaren Platz einnimmt */
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.4rem;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card-footer {
+            padding: 15px 20px;
+            text-align: right;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-anleitung {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-anleitung.html { background-color: #e34c26; }
+        .btn-anleitung.css { background-color: #264de4; }
+        .btn-anleitung.js { background-color: #323330; /* JS Button in dunklerem Kontrast zum gelben Header */ }
+        .btn-anleitung.placeholder { background-color: #6c757d; }
+
+
+        .btn-anleitung:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .add-more-info {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+
+        .add-more-info h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto; /* Footer bleibt unten */
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #f0db4f; /* JS-Gelb für Links im Footer */
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Anpassungen */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .tutorial-grid {
+                grid-template-columns: 1fr; /* Eine Spalte auf kleineren Bildschirmen */
+            }
+            .card-header {
+                font-size: 1.5rem;
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>QCode Anleitungen</h1>
+        <p>Dein interaktiver Guide zum Meistern der Webentwicklung.</p>
+    </header>
+
+    <div class="container">
+        <p class="intro-text">
+            Willkommen bei QCode! Hier findest du umfassende Anleitungen, um die Grundlagen und fortgeschrittenen Konzepte der Webentwicklung zu erlernen. Wähle ein Thema, um zu beginnen:
+        </p>
+
+        <div class="tutorial-grid">
+            <article class="tutorial-card">
+                <div class="card-header html">HTML</div>
+                <div class="card-content">
+                    <h3>Struktur des Webs</h3>
+                    <p>Lerne die Grundlage jeder Webseite kennen. Verstehe, wie du Inhalte semantisch korrekt strukturierst und die Basis für ansprechende und funktionale Webseiten legst.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="html-erklaerungen.html" class="btn-anleitung html">HTML Lernen</a>
+                </div>
+            </article>
+
+            <article class="tutorial-card">
+                <div class="card-header css">CSS</div>
+                <div class="card-content">
+                    <h3>Design & Layout</h3>
+                    <p>Entdecke, wie du deinen Webseiten Stil verleihst. Von Farben und Schriftarten bis hin zu komplexen Layouts mit Flexbox und Grid – gestalte das Web nach deinen Vorstellungen.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="css-erklaerungen.html" class="btn-anleitung css">CSS Entdecken</a>
+                </div>
+            </article>
+
+            <article class="tutorial-card">
+                <div class="card-header js">JavaScript</div>
+                <div class="card-content">
+                    <h3>Interaktivität & Dynamik</h3>
+                    <p>Mache deine Webseiten lebendig! Erlerne die Grundlagen der Programmierung im Browser, manipuliere das DOM, reagiere auf Benutzerinteraktionen und vieles mehr.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="javascript-erklaerungen.html" class="btn-anleitung js">JS Meistern</a>
+                </div>
+            </article>
+
+            </div>
+
+        <section class="add-more-info">
+            <h3>Weitere Anleitungen sind in Arbeit!</h3>
+            <p>Ich erweitere QCode ständig um neue Themen und vertiefende Inhalte. Schau bald wieder vorbei!</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> QCode von Quixoticode.</p>
+        <p>Inspiriert und erstellt, um das Lernen von Code zugänglicher zu machen.</p>
+    </footer>
+
+    <script>
+        // Setzt das aktuelle Jahr im Footer dynamisch
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
